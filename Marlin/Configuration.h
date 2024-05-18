@@ -96,7 +96,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 // #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
@@ -607,7 +607,7 @@
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 4
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 #define TEMP_SENSOR_COOLER 0
@@ -761,9 +761,9 @@
 #define DEFAULT_Kd_LIST                                                        \
   { 114.00, 114.00 }
 #else
-#define DEFAULT_Kp 29.79
-#define DEFAULT_Ki 2.91
-#define DEFAULT_Kd 76.27
+#define DEFAULT_Kp 30.20
+#define DEFAULT_Ki 3.38
+#define DEFAULT_Kd 67.41
 #endif
 #else
 #define BANG_MAX                                                               \
@@ -876,7 +876,7 @@
  * With this option disabled, bang-bang will be used. BED_LIMIT_SWITCHING
  * enables hysteresis.
  */
-// #define PIDTEMPBED
+#define PIDTEMPBED
 
 #if ENABLED(PIDTEMPBED)
 // #define MIN_BED_POWER 0
@@ -885,9 +885,9 @@
 // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor
 // of .15 (vs .1, 1, 10)
-#define DEFAULT_bedKp 10.00
-#define DEFAULT_bedKi .023
-#define DEFAULT_bedKd 305.4
+#define DEFAULT_bedKp 71.34
+#define DEFAULT_bedKi 6.01
+#define DEFAULT_bedKd 564.92
 
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC
 // for 8 cycles.
@@ -1790,7 +1790,7 @@
  *     O-- FRONT --+
  */
 #define NOZZLE_TO_PROBE_OFFSET                                                 \
-  { 0, 20, -1.7 }
+  { 20, 0, -2.15 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
